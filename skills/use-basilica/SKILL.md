@@ -4,7 +4,7 @@ description: >
   Use when the user wants to operate Basilica from an AI coding tool,
   terminal, Python script, notebook, or CI job: CLI commands, Python SDK
   automation, authentication, credits and funding, GPU/CPU rentals,
-  serverless deployments, inference endpoints, OpenClaw/Tau, distributed
+  serverless deployments, inference endpoints, Tau, distributed
   PyTorch or NCCL training, usage history, exact flags, safety checks, and
   cleanup guidance.
 ---
@@ -53,7 +53,6 @@ basilica up ...
 basilica deploy ...
 basilica deploy vllm ...
 basilica deploy sglang ...
-basilica deploy openclaw ...
 basilica deploy tau ...
 basilica train up ...
 ```
@@ -83,8 +82,7 @@ Use cleanup-friendly defaults:
 - Use `basilica deploy delete`, not stale `basilica deployments delete`.
 
 Deployments are public by default. Use `--private` in the CLI or `public=False`
-in SDK deploys when access should be gated. OpenClaw deployments are
-intentionally public and use their own gateway token flow.
+in SDK deploys when access should be gated.
 
 ## Install And Auth
 
@@ -342,23 +340,17 @@ For very large models, rentals may be a better first choice when the workload
 needs manual control, custom setup, or warmup longer than deployment health
 checks tolerate.
 
-## OpenClaw And Tau
+## Tau
 
 ```bash
-basilica deploy openclaw --provider openai --ttl 3600
-basilica deploy openclaw --provider anthropic --ttl 3600
 basilica deploy tau --ttl 3600
 ```
 
-For exact gateway and agent flags, run:
+For exact agent flags, run:
 
 ```bash
-basilica deploy openclaw --help
 basilica deploy tau --help
 ```
-
-OpenClaw deploys are intentionally public. Access is controlled by the OpenClaw
-gateway token, not Basilica share-token auth.
 
 ## Distributed Training
 

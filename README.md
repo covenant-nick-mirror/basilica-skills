@@ -2,6 +2,12 @@
 
 Agent skills for using Basilica from AI coding tools.
 
+This public distribution is generated from `packages/skills/` in the
+[Basilica development monorepo](https://github.com/one-covenant/basilica-backend).
+Public issues and proposed patches remain welcome here; maintainers carry
+accepted changes into the monorepo before regenerating the distribution.
+The CLI installation URL remains unchanged.
+
 ## Install
 
 Install the Basilica CLI, then install skills:
